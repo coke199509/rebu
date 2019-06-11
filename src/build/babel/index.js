@@ -1,7 +1,5 @@
-const { supportBrowsers } = require('../../config')
-
 module.exports = function (options) {
-  const { babelConfig, hot, browsers = supportBrowsers } = options
+  const { babelConfig, hot } = options
   const config = {
     cacheDirectory: true,
     presets: [
@@ -9,7 +7,6 @@ module.exports = function (options) {
         '@babel/preset-env',
         {
           modules: false, // babel不做模块转换工作（webpack来处理）
-          targets: { browsers }
         }
       ],
       '@babel/preset-react',

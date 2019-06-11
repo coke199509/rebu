@@ -1,7 +1,6 @@
 const webpack = require('webpack')
 const merge = require('webpack-merge')
 const autoprefixer = require('autoprefixer')
-const { supportBrowsers } = require('../../config')
 const getCommonConfig = require('./common')
 
 module.exports = function(options) {
@@ -9,14 +8,13 @@ module.exports = function(options) {
     hot,
     webpackConfig,
     publicPath,
-    browsers = supportBrowsers
   } = options
 
   const postCssLoader = {
     loader: 'postcss-loader',
     options: {
       plugins() {
-        return [autoprefixer({ browsers })]
+        return [autoprefixer()]
       }
     }
   }

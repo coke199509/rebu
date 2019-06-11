@@ -14,8 +14,6 @@ module.exports = {
     assets: 'assets.json',
     vendor: 'vendor.json'
   },
-  // 支持的浏览器列表，配置详见：https://github.com/browserslist/browserslist
-  supportBrowsers: ['last 2 chrome version', 'last 2 safari version', 'ie >= 10'],
   // webpack dev server默认配置
   devServer: {
     port: devPort,

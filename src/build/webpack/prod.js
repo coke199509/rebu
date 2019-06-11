@@ -7,7 +7,7 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const AssetsPlugin = require('assets-webpack-plugin')
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 const getCommonConfig = require('./common')
-const { supportBrowsers, outputPath, filename } = require('../../config')
+const { outputPath, filename } = require('../../config')
 
 const openAnalyzer = !!process.env.ANALYZER
 
@@ -15,14 +15,13 @@ module.exports = function(options) {
   const {
     root,
     webpackConfig,
-    browsers = supportBrowsers
   } = options
 
   const postCssLoader = {
     loader: 'postcss-loader',
     options: {
       plugins() {
-        return [autoprefixer({ browsers })]
+        return [autoprefixer()]
       }
     }
   }
