@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 0.1.2 - 2019-07-08
+### Changed
+- babel plugins增加@babel/plugin-syntax-dynamic-import
+
 ## 0.1.1 - 2019-06-11
 ### Changed
 - 升级依赖版本号
